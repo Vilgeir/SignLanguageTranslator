@@ -1,22 +1,34 @@
-import {Link} from "react-router-dom"
-import { useState } from "react";
+import TranslationForm from "../components/TranslationForm";
+import { useUser } from "../context/UserContext";
+import { translationAdd } from "../api/translation"
+import { storageSave } from "../utils/storage";
+import { STORAGE_KEY_USER } from "../const/storageKeys";
 
 const Translation = () => {
 
-    const [input, setInput] = useState("");
+    const { user, setUser } = useUser()
 
-    const handleInput = (event) => {
-        setInput(event.target.value)
+    const handleTranslationClicked = async translation => {
+        console.log(translation)
+
+        const [error, updatedUser] = await translationAdd(user, translation)
+
+        if (error !== null){
+
+        }
+        //Keep ui state and server state in sync
+        storageSave(STORAGE_KEY_USER, updatedUser)
+        //Update context state
+        setUser(updatedUser)
+        
+        console.log("error: " + error)
+        console.log("result:" + updatedUser)
     }
 
     return (
         <>
             <h2>translation</h2>
-            <Link to="/profile">
-                <button> --> Profile</button>
-            </Link>
-            <input  type="text" placeholder="Enter name to login" onChange={handleInput}></input>
-            <h3>{input}</h3>
+            <TranslationForm onTranslate={ handleTranslationClicked }/>
         </>
     )
 }
