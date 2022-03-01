@@ -1,22 +1,25 @@
 import { NavLink } from "react-router-dom"
 import { useUser } from "../context/UserContext"
+import "./navbar.css"
 
 const Navbar = () => {
 
     const { user } = useUser()
 
     return (
-        <nav>
-            <ul>
-                <li>Translations</li>
-            </ul>
+        <nav id="navbar">
+            <h2>Translations</h2>
             { user !== null && 
-            <ul>
+            <ul id="nav-ul">
                 <li>
-                    <NavLink to="/translation">Translations</NavLink>
+                    <NavLink to="/translation">
+                        <button className="nav-button">Translator</button>
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/profile">
+                        <button className="nav-button">Profile</button>
+                    </NavLink>
                 </li>
              </ul>
             }

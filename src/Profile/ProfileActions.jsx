@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom"
 import { STORAGE_KEY_USER } from "../const/storageKeys"
 import { useUser } from "../context/UserContext"
 import { storageSave, storageDelete } from "../utils/storage"
+import { translationClearHistory } from "../api/translation"
+import "../pages/profile.css"
 
 const ProfileActions = () => {
 
@@ -14,13 +15,16 @@ const ProfileActions = () => {
         }
     }
 
-    const handleClearHistoryClick = () => {
+    const handleClearHistoryClick = async () => {
         if (window.confirm("This cannot be undone!")) {
+
+            const [ clearError ] = await translationClearHistory(user.id)
 
             const updatedUser = {
                 ...user,
                 translations: []
             }
+            console.log(clearError)
 
             storageSave(updatedUser)
             setUser(updatedUser)
@@ -28,11 +32,10 @@ const ProfileActions = () => {
     }
 
     return (
-        <ul>
-            <li><Link to="/translations">Translate</Link></li>
-            <button onClick={ handleClearHistoryClick }>Clear</button>
-            <button onClick={ handleLogoutClick }>Logout</button>
-        </ul>
+        <div>
+            <button className="profile-button" onClick={ handleClearHistoryClick }>Clear history</button>
+            <button className="profile-button" onClick={ handleLogoutClick }>Logout</button>
+        </div>
     )
 }
 

@@ -27,7 +27,8 @@ const Translation = () => {
 
     return (
         <>
-            <h2>translation</h2>
+            <h1>Translation</h1>
+            <p>Type a sentence to translate</p>
             <TranslationForm onTranslate={ handleTranslationClicked }/>
         </>
     )

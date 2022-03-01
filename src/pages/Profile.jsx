@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { userById } from "../api/user"
 import { STORAGE_KEY_USER } from "../const/storageKeys"
 import { storageSave } from "../utils/storage"
+import "./profile.css"
 
 const Profile = () => {
 
@@ -25,7 +26,7 @@ const Profile = () => {
 
     return (
         <>
-            <h1>Profile</h1>
+            <h1 id="title">Profile</h1>
             <ProfileHeader username={ user.username} />
             <ProfileActions />
             <ProfileTranslateHistory translations={ user.translations }/>

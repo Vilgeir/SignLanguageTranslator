@@ -23,7 +23,7 @@ import { createHeaders } from "."
       }
   }
 
-  export const orderClearHistory = async (userId) => {
+  export const translationClearHistory = async (userId) => {
       try {
           const response = await fetch(`${apiUrl}/${userId}`, {
               method: "PATCH",

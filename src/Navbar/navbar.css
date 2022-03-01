@@ -1,0 +1,31 @@
+ul {
+    list-style-type: none;
+}
+
+#navbar {
+    background-color: rgb(255, 196, 0);
+    color:aliceblue;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nav-ul {
+    display: flex;
+}
+
+.navlink{
+    background-color: white;
+    color: white;
+}
+
+.nav-button {
+    width: 5rem;
+    color: white;
+    background-color: rgb(180, 138, 0);
+    border-radius: .3rem;
+    margin: .2rem;
+    padding: .5rem;
+    border: 0px solid black;
+}
