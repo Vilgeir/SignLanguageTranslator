@@ -4,7 +4,7 @@ ul {
 
 #navbar {
     background-color: rgb(255, 196, 0);
-    color:aliceblue;
+    color:white;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -22,10 +22,11 @@ ul {
 
 .nav-button {
     width: 5rem;
+    height: 2.5rem;
     color: white;
-    background-color: rgb(180, 138, 0);
-    border-radius: .3rem;
+    background-color: rgb(180, 130, 0);
+    border-radius: .2rem;
+    border: 1px solid black;
     margin: .2rem;
     padding: .5rem;
-    border: 0px solid black;
 }

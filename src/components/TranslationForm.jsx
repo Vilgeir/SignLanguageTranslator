@@ -1,17 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useState } from "react"
 import { signs } from "../utils/imgObject"
-
-const sssigns = [
-    {
-        char: "a",
-        img: "signs/a.png"
-    },
-    {
-        char: "b",
-        img: "signs/b.png"
-    }
-]
+import "../pages/translation.css"
 
 const TranslationForm = ( {onTranslate} ) => {
 
@@ -23,15 +13,17 @@ const TranslationForm = ( {onTranslate} ) => {
         onTranslate(translation)
     }
  
+    //listens to input value and displays sign language characters
     const handleInput = (event) => {
         if (event.target.value) {
             let imgTags = []
             let translation = event.target.value.split("")
-            //console.log(translation)
-            translation.map(char => {
-                signs.map(x => {   
-                    if (x.char === char) {
-                        imgTags.push(<img src={x.img}></img>)
+            //maps through every letter of the input value
+            translation.map((char, index) => {
+                signs.map(sign => {   
+                    //matches sign images with each letter
+                    if (sign.char === char) {
+                        imgTags.push(<img className="sign-img" key={index} src={sign.img}></img>)
                     }
                 })
             })
@@ -41,13 +33,19 @@ const TranslationForm = ( {onTranslate} ) => {
         }
     }
     return (
-        <form onSubmit={ handleSubmit(onSubmit)}>
-            <fieldset>
-                <input  type="text" { ...register("translation")} placeholder="translate" onChange={handleInput}/>
-                <button type="submit">translation</button>
-            </fieldset>
-            {input.map(x => x)}
-        </form>
+        <>
+            <form onSubmit={ handleSubmit(onSubmit)}>
+                <div>
+                    <input id="translation-input" type="text" { ...register("translation")} placeholder="translate" onChange={handleInput}/>
+                    <button id="translation-button" type="submit">Save Translation</button>
+                </div>
+            </form>
+            <div id="translation-box">
+                {input.map(tag => tag)}
+            </div>
+            
+        </>
+        
     )
 }
 

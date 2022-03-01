@@ -1,0 +1,29 @@
+.sign-img {
+    width: 3rem;
+}
+
+#translation-box {
+    margin: 1rem;
+    padding: 1rem;
+    width: 40rem;
+    height: 20rem;
+    border-radius: .2rem;
+    border: 1px solid black;
+}
+
+#translation-input {
+    width: 29.7rem;
+    height: 1rem;
+    border-radius: .2rem;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+#translation-button{
+    border-radius: .2rem;
+    width: 10rem;
+    border: 1px solid black;
+    margin: .2rem;
+    padding: 1rem;
+    right: 5rem;
+}

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { loginUser, userLogin } from "../api/user";
+import { loginUser } from "../api/user";
 import { storageSave } from "../utils/storage";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../context/UserContext";
 import { STORAGE_KEY_USER } from "../const/storageKeys";
+import "../pages/startup.css"
 
 const usernameConfig = {
     required: true,
@@ -57,19 +58,13 @@ const LoginForm = () => {
         }
     })();
 
-    console.log(errors);
     return (
         <>
-            <h2>LoginForm</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
                     <legend>Login: </legend>
-                    <label htmlFor="username">Username: </label>
-                    <input
-                        type="text"
-                        {...register("username", usernameConfig)}
-                    />
-                    <button type="submit" disabled={loading}>
+                    <input placeholder="Username" id="login-input" type="text" {...register("username", usernameConfig)}/>
+                    <button id="login-button" type="submit" disabled={loading}>
                         Continue
                     </button>
                     {errorMessage}

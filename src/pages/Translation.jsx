@@ -9,8 +9,6 @@ const Translation = () => {
     const { user, setUser } = useUser()
 
     const handleTranslationClicked = async translation => {
-        console.log(translation)
-
         const [error, updatedUser] = await translationAdd(user, translation)
 
         if (error !== null){
@@ -28,7 +26,7 @@ const Translation = () => {
     return (
         <>
             <h1>Translation</h1>
-            <p>Type a sentence to translate</p>
+            <p>Type a sentence to translate into sign language</p>
             <TranslationForm onTranslate={ handleTranslationClicked }/>
         </>
     )

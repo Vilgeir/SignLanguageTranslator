@@ -1,0 +1,17 @@
+#login-input {
+    border-radius: .2rem;
+    width: 12rem;
+    border: 1px solid black;
+    padding: 1rem;
+    right: 5rem;
+    
+}
+
+#login-button {
+    border-radius: .2rem;
+    width: 6rem;
+    border: 1px solid black;
+    margin: .2rem;
+    padding: 1rem;
+    right: 5rem;
+}
