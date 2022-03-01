@@ -2,6 +2,13 @@
 
 ## Assignment 6
 
+## Backgrout
+
+The taskt was to make a one page application for translating text into sign language using react.
+
+## Try it out!
+(https://gentle-escarpment-25362.herokuapp.com/) Click here
+
 ## Maintainer
 https://github.com/Vilgeir
 
