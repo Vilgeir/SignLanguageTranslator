@@ -7,7 +7,7 @@
 The taskt was to make a one page application for translating text into sign language using react.
 
 ## Try it out!
-(https://gentle-escarpment-25362.herokuapp.com/) Click here
+[Click here](https://gentle-escarpment-25362.herokuapp.com/)
 
 ## Maintainer
 https://github.com/Vilgeir
